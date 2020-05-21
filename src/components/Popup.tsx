@@ -2,20 +2,24 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import { IMovie } from './IMovie';
 
+interface IPopupProps {
+	selected: IMovie,
+	closePopup: () => void
+}
 
-const Popup = (selected: IMovie, closePopup: () => void) => {
+const Popup: React.FC<IPopupProps> = (props: IPopupProps) => {
 	return (
 		<section className="popup">
 			<div className="content">
 				<h2>
-					{selected.Title} <span>({selected.Year})</span>
+					{props.selected.Title} <span>({props.selected.Year})</span>
 				</h2>
-				<p className="rating">Rating: {selected.imdbRating}</p>
+				<p className="rating">Rating: {props.selected.imdbRating}</p>
 				<div className="plot">
-					<img src={selected.Poster} alt={selected.Title} />
-					<p>{selected.Plot}</p>
+					<img src={props.selected.Poster} alt={props.selected.Title} />
+					<p>{props.selected.Plot}</p>
 				</div>
-				<Button variant="contained" color="primary" onClick={closePopup}>
+				<Button variant="contained" color="primary" onClick={props.closePopup}>
 					Close
 				</Button>
 			</div>

@@ -20,27 +20,32 @@ const useStyles = makeStyles({
   },
 });
 
-export const Result = (result: IMovie, openPopup:(id: string) => void) => {
+interface IResultProps {
+	result: IMovie,
+	openPopup: (id: string) => void
+}
+
+export const Result: React.FC<IResultProps> = (props: IResultProps) => {
 	const classes = useStyles();
 	return (
 		
 		 <React.Fragment>
 		<Card  className="result"> 
-		<CardActionArea onClick={() => openPopup(result.imdbID)}>
+		<CardActionArea onClick={() => props.openPopup(props.result.imdbID)}>
 		  <CardMedia
 			className={classes.media}
-			image={result.Poster}
-			title={ result.Title }
+			image={props.result.Poster}
+			title={ props.result.Title }
 		  />
 		  <CardContent>
 			<Typography gutterBottom variant="h5" component="h2">
-			{result.Title}
+			{props.result.Title}
 			</Typography>
 			
 		  </CardContent>
 		</CardActionArea>
 		<CardActions>
-		  <Button size="small" color="primary" onClick={() => openPopup(result.imdbID)}>
+		  <Button size="small" color="primary" onClick={() => props.openPopup(props.result.imdbID)}>
 			Open Info
 		  </Button>
 		  
