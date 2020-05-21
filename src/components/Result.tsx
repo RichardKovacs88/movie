@@ -30,6 +30,7 @@ export const Result: React.FC<IResultProps> = (props: IResultProps) => {
 	return (
 		
 		 <React.Fragment>
+		
 		<Card  className="result"> 
 		<CardActionArea onClick={() => props.openPopup(props.result.imdbID)}>
 		  <CardMedia
@@ -51,6 +52,7 @@ export const Result: React.FC<IResultProps> = (props: IResultProps) => {
 		  
 		</CardActions>
 	  </Card>
+
 	  </React.Fragment>
 	)
 }

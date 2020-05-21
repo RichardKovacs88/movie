@@ -13,6 +13,7 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import {IMovie} from './components/IMovie';
+import "./App.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -46,9 +47,9 @@ function App() {
 
   const search = (e: any) => {
     if (e.key === "Enter") {
-      axios(apiurl + "&s=" + state.s).then((data: AxiosResponse<IMovie[]>) => {
+      axios(apiurl + "&s=" + state.s).then((data: AxiosResponse<any>) => {
         
-        let results = data.data;
+        let results = data.data.Search;
         if(results){
         setState(prevState => {
           return { ...prevState, results: results }

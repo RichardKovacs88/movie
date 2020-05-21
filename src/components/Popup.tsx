@@ -8,6 +8,9 @@ interface IPopupProps {
 }
 
 const Popup: React.FC<IPopupProps> = (props: IPopupProps) => {
+	if (props.selected.Title === "") {
+		return <></>;
+	}
 	return (
 		<section className="popup">
 			<div className="content">

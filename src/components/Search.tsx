@@ -11,15 +11,20 @@ const useStyles = makeStyles((theme) => ({
 	},
   }));
 
-const Search = (handleInput: any, search: any) => {
+interface ISearchProps {
+	handleInput: any,
+	search: any
+}
+
+const Search: React.FC<ISearchProps> = (props: ISearchProps) => {
 
 	const classes = useStyles();
 	return (
 		<section className="searchbox-wrap">
 			
 			<TextField className={classes.root}  autoComplete="off" id="outlined-basic" label="Search for a movie..." 
-				onChange={handleInput}
-				onKeyPress={search}/>
+				onChange={props.handleInput}
+				onKeyPress={props.search}/>
 		</section>
 	)
 }

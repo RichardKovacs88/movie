@@ -10,7 +10,7 @@ interface IResultsProps {
 const Results: React.FC<IResultsProps> = (props: IResultsProps) => {
 
 	return (
-		<section>
+		<section className="results">
 			{props.results.map(result => (
 				<Result key={result.imdbID} result={result} openPopup={props.openPopup} />
 			))}
