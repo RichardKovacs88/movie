@@ -27,8 +27,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const emptyMovie: IMovie = {
-  Year: null,
-  Poster: null,
+  Year: 1988,
+  Poster: "",
   Title: "",
   imdbRating: "",
   Plot: "",
