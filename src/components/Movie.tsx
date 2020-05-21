@@ -4,4 +4,5 @@ export interface Movie {
     Title: string;
     imdbRating: string;
     Plot: string;
+    imdbID: string;
   }

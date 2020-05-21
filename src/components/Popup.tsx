@@ -3,7 +3,7 @@ import Button from "@material-ui/core/Button";
 import {Movie} from './Movie';
 
 
-const Popup = (selected: any, closePopup: any) => {
+const Popup = (selected: Movie, closePopup: any) => {
 	return (
 		<section className="popup">
 			<div className="content">
