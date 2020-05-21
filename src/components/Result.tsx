@@ -7,7 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { Movie } from './Movie';
+import { IMovie } from './IMovie';
 import { IResult } from './IResult';
 
 const useStyles = makeStyles({

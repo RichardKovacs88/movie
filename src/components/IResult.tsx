@@ -1,6 +1,6 @@
-import { Movie } from './Movie';
+import { IMovie } from './IMovie';
 export interface IResult{
 	key: string,
-    result: Movie,
-	openPopup: void,
+    result: IMovie,
+	openPopup: (id: string) => void
 }

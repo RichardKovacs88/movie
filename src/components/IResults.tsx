@@ -1,6 +1,5 @@
-import { Movie } from './Movie';
+import { IMovie } from './IMovie';
 export interface IResults{
-	
-    results: Movie[];
-    openPopup: void;
+	results: IMovie[];
+    openPopup: (id: string) => void
 }

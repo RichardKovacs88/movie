@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import Search from './components/Search';
 import Results from './components/Results';
 import Popup from './components/Popup';
@@ -12,7 +12,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-
+import {IMovie} from './components/IMovie';
 import { IResults } from './components/IResults';
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -26,21 +26,29 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const emptyMovie: IMovie = {
+  Year: null,
+  Poster: null,
+  Title: "",
+  imdbRating: "",
+  Plot: "",
+  imdbID: "",
+};
 function App() {
  
   const [state, setState] = useState({
     s: "",
-    results: [],
-    selected: {},
+    results: [{} as IMovie],
+    selected: {} as IMovie,
   });
 
   const apiurl = "http://www.omdbapi.com/?apikey=4a3b711b";
 
   const search = (e: any) => {
     if (e.key === "Enter") {
-      axios(apiurl + "&s=" + state.s).then(({ data }) => {
+      axios(apiurl + "&s=" + state.s).then((data: AxiosResponse<IMovie[]>) => {
         
-        let results = data.Search;
+        let results = data.data;
         if(results){
         setState(prevState => {
           return { ...prevState, results: results }
@@ -71,7 +79,7 @@ function App() {
 
   const closePopup = () => {
     setState(prevState => {
-      return { ...prevState, selected: {} }
+      return { ...prevState, selected: emptyMovie }
     });
   }
   const classes = useStyles();

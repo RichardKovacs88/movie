@@ -1,9 +1,9 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
-import {Movie} from './Movie';
+import { IMovie } from './IMovie';
 
 
-const Popup = (selected: Movie, closePopup: any) => {
+const Popup = (selected: IMovie, closePopup: any) => {
 	return (
 		<section className="popup">
 			<div className="content">
