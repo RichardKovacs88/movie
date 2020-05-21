@@ -1,11 +1,10 @@
 import React from 'react';
 import {Result }from './Result';
 import { IMovie } from './IMovie';
-import { IResults } from './IResults';
-import { IResult } from './IResult';
 
-const Results = (results: IResults, openPopup:void) => {
-	let result: IResult;
+
+const Results = (results: IMovie[], openPopup:(id: string) => void) => {
+
 	return (
 		<section>
 			{results.map(result => (

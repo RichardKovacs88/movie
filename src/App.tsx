@@ -13,7 +13,7 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import {IMovie} from './components/IMovie';
-import { IResults } from './components/IResults';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -85,8 +85,7 @@ function App() {
   const classes = useStyles();
 
   return (
-    
-    <React.Fragment>
+  <React.Fragment>
    <div className="App">
     <div className={classes.root}>
       <AppBar position="static">
@@ -109,8 +108,7 @@ function App() {
         {(typeof state.selected.Title != "undefined") ? <Popup selected={state.selected} closePopup={closePopup} /> : false}
       </main>
     </div>
-   
-    </React.Fragment>
+  </React.Fragment>
   );
 }
 

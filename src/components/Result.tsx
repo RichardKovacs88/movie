@@ -8,7 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { IMovie } from './IMovie';
-import { IResult } from './IResult';
+
 
 const useStyles = makeStyles({
   root: {
@@ -20,27 +20,27 @@ const useStyles = makeStyles({
   },
 });
 
-export const Result = (result: IResult, openPopup: any) => {
+export const Result = (result: IMovie, openPopup:(id: string) => void) => {
 	const classes = useStyles();
 	return (
 		
 		 <React.Fragment>
 		<Card  className="result"> 
-		<CardActionArea onClick={() => openPopup(result.result.imdbID)}>
+		<CardActionArea onClick={() => openPopup(result.imdbID)}>
 		  <CardMedia
 			className={classes.media}
-			image={result.result.Poster}
-			title={ result.result.Title }
+			image={result.Poster}
+			title={ result.Title }
 		  />
 		  <CardContent>
 			<Typography gutterBottom variant="h5" component="h2">
-			{result.result.Title}
+			{result.Title}
 			</Typography>
 			
 		  </CardContent>
 		</CardActionArea>
 		<CardActions>
-		  <Button size="small" color="primary" onClick={() => openPopup(result.result.imdbID)}>
+		  <Button size="small" color="primary" onClick={() => openPopup(result.imdbID)}>
 			Open Info
 		  </Button>
 		  
