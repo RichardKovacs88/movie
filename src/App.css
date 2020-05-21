@@ -1,38 +1,135 @@
-.App {
-  text-align: center;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+	font-family: 'montserrat', sans-serif;
+	background-color: #223343;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+main {
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+section {
+	padding: 15px;
 }
 
-.App-link {
-  color: #61dafb;
+.searchbox {
+	display: block;
+	width: 100%;
+	padding: 15px;
+
+	border: none;
+	outline: none;
+	background: none;
+
+	background-color: #EEE;
+	
+
+	color: #53565A;
+	font-size: 20px;
+	font-weight: 300;
+
+	transition: 0.4s ease-out;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.results {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0px;
+}
+
+.results .result {
+	width: 32%;
+	min-width: 230px;
+	padding: 10px;
+	margin: 5px;
+	display: flex;
+	flex-direction: column;
+	cursor: pointer;
+}
+
+.results .result img {
+	display: block;
+	width: 100%;
+}
+
+
+
+.popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: #000;
+
+	overflow-y: scroll;
+}
+
+.popup .content {
+	display: block;
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 25px;
+
+	color: #FFF;
+}
+
+.popup .content h2 {
+	font-size: 28px;
+	font-weight: 600;
+}
+.popup .content h2 span {
+	font-weight: 300;
+	font-size: 20px;
+}
+
+.popup .content .rating {
+	margin-bottom: 30px;
+}
+
+.popup .content .plot {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0px -15px 30px;
+}
+
+.popup .content .plot img {
+	flex: 1 1 50%;
+	max-width: 300px;
+	padding: 0px 15px;
+}
+
+.popup .content .plot p {
+	flex: 1 1 50%;
+	padding: 15px;
+}
+
+.popup .content .close {
+	display: inline-block;
+	padding: 15px 30px;
+	font-size: 18px;
+	font-weight: 700;
+
+	background: #4484C4;
+	color: #FFF;
+	border-radius: 8px;
+	border: none;
+	outline: none;
+	appearance: none;
+	cursor: pointer;
+
+	transition: 0.4s ease-out;
+}
+
+.popup .content .close:hover {
+	background: #223343;
 }
