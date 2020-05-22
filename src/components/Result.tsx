@@ -27,32 +27,34 @@ interface IResultProps {
 
 export const Result: React.FC<IResultProps> = (props: IResultProps) => {
 	const classes = useStyles();
+	
+	if (props.result.Title == null){
+		return (<React.Fragment><div>Let Search</div></React.Fragment>);
+	}
+	else
 	return (
-		
-		 <React.Fragment>
-		
-		<Card  className="result"> 
-		<CardActionArea onClick={() => props.openPopup(props.result.imdbID)}>
-		  <CardMedia
-			className={classes.media}
-			image={props.result.Poster}
-			title={ props.result.Title }
-		  />
-		  <CardContent>
-			<Typography gutterBottom variant="h5" component="h2">
-			{props.result.Title}
-			</Typography>
+		<React.Fragment>
+			<Card  className="result"> 
+			<CardActionArea onClick={() => props.openPopup(props.result.imdbID)}>
+			<CardMedia
+				className={classes.media}
+				image={props.result.Poster}
+				title={ props.result.Title }
+			/>
+			<CardContent>
+				<Typography gutterBottom variant="h5" component="h2">
+				{props.result.Title}
+				</Typography>
+				
+			</CardContent>
+			</CardActionArea>
+			<CardActions>
+			<Button size="small" color="primary" onClick={() => props.openPopup(props.result.imdbID)}>
+				Open Info
+			</Button>
 			
-		  </CardContent>
-		</CardActionArea>
-		<CardActions>
-		  <Button size="small" color="primary" onClick={() => props.openPopup(props.result.imdbID)}>
-			Open Info
-		  </Button>
-		  
-		</CardActions>
-	  </Card>
-
+			</CardActions>
+		</Card>
 	  </React.Fragment>
 	)
 }

@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const emptyMovie: IMovie = {
-  Year: 1988,
+  Year: 3000,
   Poster: "",
   Title: "",
   imdbRating: "",
@@ -91,9 +91,7 @@ function App() {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton>
+         
           <Typography variant="h6" className={classes.title}>
             Movie Database
           </Typography>
