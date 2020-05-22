@@ -29,7 +29,7 @@ export const Result: React.FC<IResultProps> = (props: IResultProps) => {
 	const classes = useStyles();
 	
 	if (props.result.Title == null){
-		return (<React.Fragment><div>Let Search</div></React.Fragment>);
+		return (<React.Fragment><div>Let's Search and hit Enter!</div></React.Fragment>);
 	}
 	else
 	return (

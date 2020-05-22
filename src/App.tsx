@@ -9,11 +9,12 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 
 import {IMovie} from './components/IMovie';
-import "./App.css";
+import "./App.scss";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -66,7 +67,7 @@ function App() {
     axios(apiurl + "&i=" + id).then(({ data }) => {
       let result = data;
 
-      console.log(result);
+      //console.log(result);
 
       setState(prevState => {
         return { ...prevState, selected: result }
