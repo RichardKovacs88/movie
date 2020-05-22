@@ -44,6 +44,11 @@ function App() {
 
   const search = (e: any) => {
     if (e.key === "Enter") {
+      if (state.s === "") {
+        setState(prevState => {
+          return { ... prevState, results: []}
+        })
+      }
       axios(apiurl + "&s=" + state.s).then((data: AxiosResponse<any>) => {
         
         let results = data.data.Search;

@@ -11,6 +11,14 @@ import { IMovie } from './IMovie';
 
 
 const useStyles = makeStyles({
+
+   button: {
+	background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+	border: 0,
+	borderRadius: 3,
+	boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+	color: 'white',
+  },
   root: {
     maxWidth: 345,
   },
@@ -29,7 +37,7 @@ export const Result: React.FC<IResultProps> = (props: IResultProps) => {
 	const classes = useStyles();
 	
 	if (props.result.Title == null){
-		return (<React.Fragment><div>Let's Search and hit Enter!</div></React.Fragment>);
+		return (<React.Fragment><div>Let Search</div></React.Fragment>);
 	}
 	else
 	return (
@@ -49,7 +57,7 @@ export const Result: React.FC<IResultProps> = (props: IResultProps) => {
 			</CardContent>
 			</CardActionArea>
 			<CardActions>
-			<Button size="small" color="primary" onClick={() => props.openPopup(props.result.imdbID)}>
+			<Button size="small" className={classes.button} color="primary" onClick={() => props.openPopup(props.result.imdbID)}>
 				Open Info
 			</Button>
 			
